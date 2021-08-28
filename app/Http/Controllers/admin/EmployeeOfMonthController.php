@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Attendance;
 use App\Models\Employee;
@@ -25,7 +24,8 @@ class EmployeeOfMonthController extends Controller
      */
     public function store(EmployeeOfmonthRequest $request)
     {
-        
+                 // show the employee of the  month
+
         if ( count(Attendance::whereMonth('day', $request->month)->get())>0) {
             $employee = DB::table('attendances')
             ->select("attendanceable_id",DB::raw('SUM(working_hours) as month_hours'))
@@ -55,6 +55,7 @@ class EmployeeOfMonthController extends Controller
      */
     public function update(EmployeeOfyearRequest $request, $id)
     {
+         // show the employee of the  year
         if ( count(Attendance::whereYear ('day', $request->year)->get())>0) {
             $employee = DB::table('attendances')
             ->select("attendanceable_id",DB::raw('SUM(working_hours) as year_hours'))

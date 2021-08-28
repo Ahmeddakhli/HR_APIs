@@ -18,4 +18,9 @@ class Employee extends Model
     {
         return $this->morphMany(Attendance::class, 'attendanceable');
     }
+    protected $casts = [
+       
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
 }

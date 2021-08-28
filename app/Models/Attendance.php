@@ -35,4 +35,8 @@ class Attendance extends Model
       *      $this->attributes['status_id'] = 3; }
       *  if ($value=="Day OFF") {
      *       $this->attributes['status_id'] = 4; }}*/
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d',
+        'updated_at' => 'datetime:Y-m-d',
+    ];
 }

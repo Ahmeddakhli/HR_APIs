@@ -15,6 +15,7 @@ use App\Http\Controllers\admin\ReportController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::resource('reports', ReportController::class);
 
 Route::get('/', function () {
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\users\ShowrangeRequest;
 use App\Http\Requests\users\ShowmonthRequest;
+use App\Http\Requests\users\EmployeeAttendaanceRequest;
 use App\Models\Employee;
 
 class ReportController extends Controller
@@ -16,10 +17,10 @@ class ReportController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-            
-        if($Employee=Employee::find(5)){
+    public function index(EmployeeAttendaanceRequest  $request)
+    {            
+         // show attendance of employee by selected  id
+        if($Employee=Employee::find($request->id)){
 
         if(count($Employee->attendances)>0)
         {
@@ -34,15 +35,7 @@ class ReportController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+ 
 
     /**
      * Store a newly created resource in storage.
@@ -52,7 +45,7 @@ class ReportController extends Controller
      */
     public function store(ShowmonthRequest $request)
     {
-        // show attendance of employee by month
+        // show attendance of employee by selected  month
         
         if($employee=Employee::find($request->employee_id))
         {
@@ -72,27 +65,7 @@ class ReportController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-      
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+   
 
     /**
      * Update the specified resource in storage.
@@ -103,6 +76,7 @@ class ReportController extends Controller
      */
     public function update(ShowrangeRequest $request, $id)
     {
+                // show attendance of employee Between start and end date selected
 
         if($employee=Employee::find($id))
         {
@@ -110,7 +84,6 @@ class ReportController extends Controller
             if (count($employee->attendances)>0) {
 
               $employee_attendances= $employee->attendances() 
-             //  ->whereMonth('day', '8')->get();
              ->whereBetween('day', [$request->startdate, $request->enddate])
              ->orderBy('day')->get();
 
@@ -130,14 +103,5 @@ class ReportController extends Controller
       
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+ 
 }

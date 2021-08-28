@@ -22,6 +22,8 @@ use App\Http\Controllers\admin\EmployeeOfMonthController;
 
 Route::post('/auth/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
+Route::resource('reports', ReportController::class);
+
 
 Route::group(["middleware" => ["auth:sanctum"]], function()
 {
