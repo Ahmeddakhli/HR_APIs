@@ -1,0 +1,829 @@
+{
+	"variables": [],
+	"info": {
+		"name": "userapi",
+		"_postman_id": "3b1ce242-d8e8-5387-e8cd-51fae37f18d6",
+		"description": "all auth hr_user api contains 16 requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hr_user  register",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "email",
+							"value": "tesggghgt@test.com",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "password_confirmation",
+							"value": "password",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": "send user token to logout"
+			},
+			"response": []
+		},
+		{
+			"name": "hr_user logout",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/logout",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 6|beC6Z6qiwyRIEpfN04IXle7qRCrmc7NxgYQwcBIH",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "send user token to logout"
+			},
+			"response": []
+		},
+		{
+			"name": "hr_user login",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/auth/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@tesjjjt.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "passwor",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "d31388e8-3377-469a-9f69-c9345045fad0",
+					"name": "hr_user login",
+					"originalRequest": {
+						"url": "http://127.0.0.1:8000/api/auth/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "test@tesjjjt.com",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "",
+									"type": "text"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "access-control-allow-origin",
+							"key": "access-control-allow-origin",
+							"value": "*",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, private",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "close",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Fri, 27 Aug 2021 16:03:46 GMT, Fri, 27 Aug 2021 16:03:46 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "host",
+							"key": "host",
+							"value": "127.0.0.1:8000",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-powered-by",
+							"key": "x-powered-by",
+							"value": "PHP/7.3.21",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						},
+						{
+							"name": "x-ratelimit-limit",
+							"key": "x-ratelimit-limit",
+							"value": "60",
+							"description": "Custom header"
+						},
+						{
+							"name": "x-ratelimit-remaining",
+							"key": "x-ratelimit-remaining",
+							"value": "59",
+							"description": "Custom header"
+						}
+					],
+					"cookie": [],
+					"responseTime": 7736,
+					"body": "{\"status\":\"Success\",\"message\":null,\"data\":{\"token\":\"7|TfzdtIxA8eMpoMJn9dpYyeEaVOSwy32QMreHosa2\"}}"
+				}
+			]
+		},
+		{
+			"name": "add employee",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employees",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 7|TfzdtIxA8eMpoMJn9dpYyeEaVOSwy32QMreHosa2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ahmed dakhli",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "ahmjddjxxhhjjjjed@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "01146820407",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "hiredate",
+							"value": "2021/05/07",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employees/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 7|TfzdtIxA8eMpoMJn9dpYyeEaVOSwy32QMreHosa2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ahmed dakhli",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "90@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "01146820407",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "hiredate",
+							"value": "2021/05/07",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "update attendance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/attendances/2",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|XcHv1AlTD1V0hL95DuIPmmuJOD9dg7TOvVplOgzV",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "day",
+							"value": "2521-03-19",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "working_hours",
+							"value": "5",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "attendanceable_id",
+							"value": "30",
+							"type": "text",
+							"description": ""
+						},
+						{
+							"key": "status_id",
+							"value": "1",
+							"type": "text",
+							"description": ""
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "show employee",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employees/111",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 7|TfzdtIxA8eMpoMJn9dpYyeEaVOSwy32QMreHosa2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ahmed dakhli",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "885@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "01146820407",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "hiredate",
+							"value": "2021/05/07",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "employee  range   attendance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/reports/4",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|XWKpgNR2IUFla7W0ePIMx4sm8VpjPkwrFZverGad",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "startdate",
+							"value": "2021-06-27",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "enddate",
+							"value": "2021-09-27",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "employee     attendance  by month",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/reports",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|XcHv1AlTD1V0hL95DuIPmmuJOD9dg7TOvVplOgzV",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "month",
+							"value": "7",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "employee_id",
+							"value": "4",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "add employee  attendance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/attendances",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|TgZsPPsv5AbSD2fQjUBrEYrwZYPWObkhcQEb03yd",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "day",
+							"value": "2521-03-19",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "working_hours",
+							"value": "5",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "attendanceable_id",
+							"value": "30",
+							"description": "employee id ",
+							"type": "text"
+						},
+						{
+							"key": "status_id",
+							"value": "1",
+							"description": " one of {1=>'Present',2=>'Absent','3=>Sick Leave',4=>'Day OFF'}",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "the employee of month",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employeeofmonths",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|XcHv1AlTD1V0hL95DuIPmmuJOD9dg7TOvVplOgzV",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "month",
+							"value": "12",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "the employee of year",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employeeofmonths/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|TgZsPPsv5AbSD2fQjUBrEYrwZYPWObkhcQEb03yd",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "year",
+							"value": "2012",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "delete employee",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employees/2",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|XcHv1AlTD1V0hL95DuIPmmuJOD9dg7TOvVplOgzV",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "delete attendance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/attendances/14",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|XcHv1AlTD1V0hL95DuIPmmuJOD9dg7TOvVplOgzV",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "show all  employee",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/employees",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 7|TfzdtIxA8eMpoMJn9dpYyeEaVOSwy32QMreHosa2",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ahmed dakhli",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "885@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "01146820407",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "hiredate",
+							"value": "2021/05/07",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		},
+		{
+			"name": "show all  employee attendance",
+			"request": {
+				"url": "http://127.0.0.1:8000/api/reports",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|XWKpgNR2IUFla7W0ePIMx4sm8VpjPkwrFZverGad",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "ahmed dakhli",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "885@gmail.com",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "mobile_no",
+							"value": "01146820407",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "hiredate",
+							"value": "2021/05/07",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": "name and email reqiered"
+			},
+			"response": []
+		}
+	]
+}
